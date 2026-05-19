@@ -146,11 +146,11 @@ def main() -> int:
         classsignup_ids = read_classsignup_ids(raw_csv_path)
         conn = connect_to_source_db()
 
-        enrichment_df = extract_view_homework_data(conn, classsignup_ids)
+        enrichment_df = extract_classsignup_enrichment_data(conn, classsignup_ids)
 
         export_dataframe_to_csv(enrichment_df, output_path)
 
-        print("vw_Homework enrichment extraction completed successfully.")
+        print("ClassSignupsID enrichment extraction completed successfully.")
 
         return 0
 
